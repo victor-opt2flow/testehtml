@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Map Teste</title>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+      height: 300px;
+      width: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    /*.mapa h2{
+      width:100%;
+      color:#000000;
+      text-transform:uppercase;
+      font-size:22px;
+      font-weight:normal;
+      margin-top:40px
+    }
+    .mapa p{
+      font-size:15px;
+      color:#6d6d6d
+    }*/
+    .container-mapa {
+      width: 100%;
+    }
+    #escolhaComercio{
+      float:left;
+      width:100%;
+      /*padding:0;*/
+      /*margin-top:-55px*/
+    }
+    #escolhaComercio #escolha{
+      position:relative
+    }
+    #escolhaComercio label{
+      position:relative;
+      float:left;
+      width:10%;
+      height:107px;
+      background:#E0E0E0 ; /*Gray 500 material palette*/
+      font-size:14px;
+      color:#000;
+      margin:1px 0 0 0;
+      cursor:pointer;
+      font-weight:normal;
+      text-transform:uppercase;
+      text-align:center;
+      border:1px solid #BDBDBD;
+    }
+    #escolhaComercio label:hover {
+      background: #EEEEEE; /*Gray 400 material palette*/
+    }
+    #escolhaComercio span{
+      float:left;
+      width:100%;
+      color:#B71C1C; /*Gray 300 material palette*/
+      font-size:11px
+    }
+    #escolhaComercio input{
+      display:none
+    }
+    #escolhaComercio input:checked+label[for=gym],#escolhaComercio input:checked+label[for=bank],#escolhaComercio input:checked+label[for=bar],#escolhaComercio input:checked+label[for=school],#escolhaComercio input:checked+label[for=pharmacy],#escolhaComercio input:checked+label[for=hospital],#escolhaComercio input:checked+label[for=store],#escolhaComercio input:checked+label[for=bakery],#escolhaComercio input:checked+label[for=bus_station],#escolhaComercio input:checked+label[for=restaurant],#escolhaComercio input:checked+label[for=grocery_or_supermarket]{
+      background:#e57373; /*Red 300*/
+      color:#fff
+    }
+    #escolhaComercio i{
+      width:50px;
+      height:42px;
+      display:inline-block;
+      margin:18px 0 0 0;
+      background-repeat:no-repeat;
+      background-position:center center
+    }
+    #escolhaComercio input:checked+label .checked-span{
+      color:white;
+    }
+
+    #escolhaComercio .gym{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-gym.png)
+    }
+    #escolhaComercio input:checked+label .gym{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-gym-checked.png)
+    }
+    #escolhaComercio .bank{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bank.png)
+    }
+    #escolhaComercio input:checked+label .bank{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bank-checked.png)
+    }
+     #escolhaComercio .bar{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bar.png)
+    }
+    #escolhaComercio input:checked+label .bar{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bar-checked.png)
+    }
+     #escolhaComercio .school{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-school.png)
+    }
+    #escolhaComercio input:checked+label .school{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-school-checked.png)
+    }
+     #escolhaComercio .pharmacy{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-pharmacy.png)
+    }
+    #escolhaComercio input:checked+label .pharmacy{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-pharmacy-checked.png)
+    }
+     #escolhaComercio .hospital{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-hospital.png)
+    }
+    #escolhaComercio input:checked+label .hospital{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-hospital-checked.png)
+    }
+     #escolhaComercio .bakery{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bakery.png)
+    }
+    #escolhaComercio input:checked+label .bakery{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bakery-checked.png)
+    }
+     #escolhaComercio .bus_station{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bus_station.png)
+    }
+    #escolhaComercio input:checked+label .bus_station{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-bus_station-checked.png)
+    }
+     #escolhaComercio .restaurant{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-restaurant.png)
+    }
+    #escolhaComercio input:checked+label .restaurant{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-restaurant-checked.png)
+    }
+     #escolhaComercio .grocery_or_supermarket{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-grocery_or_supermarket.png)
+    }
+    #escolhaComercio input:checked+label .grocery_or_supermarket{
+      background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-grocery_or_supermarket-checked.png)
+    }
+
+    /*#escolhaComercio input:checked+label[for=gym] .arrow-right,#escolhaComercio input:checked+label[for=bank] .arrow-right,#escolhaComercio input:checked+label[for=bar] .arrow-right,#escolhaComercio input:checked+label[for=school] .arrow-right,#escolhaComercio input:checked+label[for=pharmacy] .arrow-right,#escolhaComercio input:checked+label[for=hospital] .arrow-right,#escolhaComercio input:checked+label[for=store] .arrow-right,#escolhaComercio input:checked+label[for=bakery] .arrow-right,#escolhaComercio input:checked+label[for=bus_station] .arrow-right,#escolhaComercio input:checked+label[for=restaurant] .arrow-right,#escolhaComercio input:checked+label[for=grocery_or_supermarket] .arrow-right{
+    position:absolute;
+    top:-24px;
+    left:34px;
+    display:inline-block;
+    z-index:999;
+    width:0px;
+    height:0px;
+    border-bottom:24px solid #aeaeae;
+    border-left:24px solid transparent;
+    border-right:24px solid transparent
+    }*/
+  </style>
+  <script type="text/javascript">
+    var lat = '-23.5975525';
+    var long = '-46.6654917';
+    var map;
+    var lugar;
+    var marcadores = [];
+    var contador = 0;
+    function initialize() {
+      var pyrmont = new google.maps.LatLng(lat, long);
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 16,
+        disableDefaultUI: true,
+        zoomControl: true
+      });
+
+      function addMarker(location) {
+        var Marcador = new google.maps.Circle({
+          center: pyrmont,
+          radius: 300,
+          //strokeColor: "#FF0000",
+          //strokeOpacity: 0.1,
+          strokeWeight: 0,
+          fillColor: "#AB1B01",
+          fillOpacity: 0.3,
+          map: map
+        });
+      }
+    addMarker(pyrmont);  // comentar esta linha para retirar circulo
+    
+    $("form#escolha input").click(function() {
+      lugar = $(this).val();
+      var request = {
+        location: pyrmont,
+        radius: 500,
+        type: lugar == 'store' ? ['store','shopping'] : [lugar]
+      };
+      if ( $(this).prop("checked")==true ) {
+        contador ++;
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              createMarker(results[i]);
+            }
+          } else{
+            console.log('erro: '+status);
+          }
+        }
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+        marcadores[contador] = {ID: lugar, marcador: []};
+        function createMarker(place) {
+          var placeLoc = place.geometry.location;
+          // if (place.icon) {
+          var iconBase = 'http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-'+lugar+'.png';
+          var image = new google.maps.MarkerImage(iconBase, new google.maps.Size(71, 71),
+          new google.maps.Point(0, 0), new google.maps.Point(17, 34),
+          new google.maps.Size(25, 25));
+          // } else var image = null;
+          var marker = new google.maps.Marker({
+          map: map,
+          //icon: iconBase,
+          icon: image,
+          //animation: google.maps.Animation.BOUNCE,
+          //icon: 'gym-checked.png',
+          position: place.geometry.location
+  });
+          marcadores[contador].marcador.push(marker);
+          var content = place.name + "<br>" + place.vicinity
+          var infowindow = new google.maps.InfoWindow()
+          google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+            return function() {
+              infowindow.setContent(content);
+              infowindow.open(map,marker);
+              //setTimeout(function () { infowindow.close(); }, 5000); //Fechar a infoWindows depois de 5 sec.
+            };
+          })(marker,content,infowindow));
+
+        }
+      } else{
+        function deletarMarcadores(lugar) {
+          for (var i = 1; i < marcadores.length; i++) {
+            if(marcadores[i].ID == lugar){
+              for (var a = 0; a < marcadores[i].marcador.length; a++) {
+                marcadores[i].marcador[a].setMap(null);
+              };
+            }
+          };
+        }
+        deletarMarcadores(lugar);
+      }
+    });
+  }
+</script>
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div id="map"></div>
+    <!--<div id="street-view" class="off_street"></div>-->
+    <div class="container-mapa">
+      <div class="mapa col-md-12">
+        <div class="row">
+          <div id="escolhaComercio" class="col-md-12 hidden-xs hidden-sm">
+            <form id="escolha" name="escolha" class="row">
+              <input type="checkbox" id="gym" name="tipo" value="gym">
+              <label for="gym">
+                <i class="gym"></i>
+                <br>
+                <span class="checked-span">Academias</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="bank" name="tipo" value="bank">
+              <label for="bank">
+                <i class="bank"></i>
+                <br>
+                <span class="checked-span">Bancos</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="bar" name="tipo" value="bar">
+              <label for="bar">
+                <i class="bar"></i>
+                <br>
+                <span class="checked-span">Bares</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="school" name="tipo" value="school">
+              <label for="school">
+                <i class="school"></i>
+                <br>
+                <span class="checked-span">Escolas</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="pharmacy" name="tipo" value="pharmacy">
+              <label for="pharmacy">
+                <i class="pharmacy"></i>
+                <br>
+                <span class="checked-span">Farmácias</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="hospital" name="tipo" value="hospital">
+              <label for="hospital">
+                <i class="hospital"></i>
+                <br>
+                <span class="checked-span">Hospital</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="bakery" name="tipo" value="bakery">
+              <label for="bakery">
+                <i class="bakery"></i>
+                <br>
+                <span class="checked-span">Padarias</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="bus_station" name="tipo" value="bus_station">
+              <label for="bus_station">
+                <i class="bus_station"></i>
+                <br>
+                <span class="checked-span">Pontos de Ônibus</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="restaurant" name="tipo" value="restaurant">
+              <label for="restaurant">
+                <i class="restaurant"></i>
+                <br>
+                <span class="checked-span">Restaurantes</span>
+                <div class="arrow-right"></div>
+              </label>
+              <input type="checkbox" id="grocery_or_supermarket" name="tipo" value="grocery_or_supermarket">
+              <label for="grocery_or_supermarket">
+                <i class="grocery_or_supermarket"></i>
+                <br>
+                <span class="checked-span">Supermercados</span>
+                <div class="arrow-right"></div>
+              </label>
+            </form>
+          </div>
+        </div><!--row-->
+      </div><!--mapa-->
+    </div><!--container-->
+  </body>
+  </html>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF09fM_VS8k8qE__pL67JqD-0u3Gze1Ss&libraries=places&callback=initialize" async defer></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
