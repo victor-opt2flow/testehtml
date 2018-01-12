@@ -147,17 +147,23 @@
     background-image:url(http://erwinmaack.com.br/wp-content/themes/devdmbootstrap3/img/icons-markers/icon-grocery_or_supermarket-checked.png)
     }
     /*Media Query para não quebrar*/
-       @media (max-width: 767px) { 
+     @media (max-width: 575px) {
+        #escolhaComercio i {
+         width: 27px;
+    } 
+    }
+    @media (max-width: 767px) { 
      #escolhaComercio label {
          height:50px;
     }
       #escolhaComercio i {
-         width: 30px;
          margin: 0;
     } 
-      #escolhaComercio span {
-
-      }
+    }
+    @media (min-width: 576px) and (max-width: 767px) { 
+        #escolhaComercio i {
+         width: 30px;
+    } 
     }
     </style>
     <script type="text/javascript">
