@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bando de pau no cú</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Roboto:400,500,700&display=swap" rel="stylesheet">
+    
+     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+
+        .page-cash-passport {
+            font-family: 'Lato';
+        }
+
+        .banner {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            position: relative;
+            margin-top: 110px;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;;
+        }
+
+        @media (min-width: 992px) {
+            .banner {
+                height: 480px;
+                text-align: left;
+            }
+        }
+
+
+        .banner::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(26, 29, 54, 0.6);
+            height: 100%;
+            width: 100%;
+        }
+
+        .banner__title {
+            font-weight: bold;
+            font-size: 46px;
+        }
+
+        .banner__subtitle {
+            font-family: 'Montserrat';
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .recebeu-cartao {
+            background: #fff;
+            padding: 30px 0;
+        }
+
+        @media (min-width: 992px) {
+            .recebeu-cartao img {
+                max-width: 70%;
+            }
+        }
+
+        .recebeu-cartao h3 {
+            display: block;
+            color: #1A1D36;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .recebeu-cartao a {
+            background: #1298D4;
+            border-radius: 30px;
+            box-shadow: 0px 2px 8px #888888;
+            color: white;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 30px;
+            text-align: center;
+            transition: .3s;
+            margin: 10px;
+        }
+
+
+        .recebeu-cartao a:hover {
+            opacity: 0.8;
+            transition: .3s;
+        }
+
+        .recebeu-cartao img {
+            margin: 0 auto; 
+        }
+
+        @media (min-width: 992px) {
+            .col-md-offset-right-1 {
+                margin-right: 8.33333333%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .recebeu-cartao img {
+                margin: 0;
+            }
+        }   
+        .cash-passport a,
+        .embarque a {
+            color: #1298D4;
+            border-bottom: 1px solid #1298D4;
+            font-weight: bold;
+        }
+
+        .cash-passport {
+            background: #F5F7F9;
+            padding: 30px;
+            color: #1A1D36;
+        }
+
+        .cash-passport__title {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cash-passport .slider-cash-passport .slick-arrow {
+            width: 20px;
+            height: 31px;
+            background-repeat: no-repeat;
+        }
+
+        .cash-passport .slider-cash-passport .slick-arrow.slick-disabled {
+            opacity: .25;
+        }
+
+        .cash-passport .slider-cash-passport .slick-next {
+            background-image: url('confi/chevron-right.png');
+            right: -50px;
+        }
+
+        .cash-passport .slider-cash-passport .slick-prev {
+            background-image: url('confi/chevron-left.png');
+            left: -50px;
+        }
+
+        .cash-passport .slider-cash-passport .slick-prev:before,
+        .cash-passport .slider-cash-passport .slick-next:before {
+            content: '';
+        }
+
+        .cash-passport .slick-slide {
+            margin: 10px 15px;
+        }
+
+        .slider-cash-passport {
+            margin: 30px 60px 20px;
+        }
+
+        .slider-cash-passport .slick-dots li button:before {
+            font-size: 15px;
+        }
+
+        .box-slider {
+            background: #fff;
+            padding: 20px 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
+        }
+
+        @media (min-width: 1200px) {
+            .box-slider {
+                height: 270px;
+            }
+        }
+
+        .box-slider .slider-cash-passport__title {
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .box-slider .slider-cash-passport__text {
+            font-size: 14px;
+        }
+
+        .box-slider .icon {
+            margin: 0 auto;
+            height: 60px;
+            display: table;
+        }
+
+        .box-slider .icon img {
+            max-width: 55px;
+            height: auto;
+        }
+
+        .cash-passport-terms ul {
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        .row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.viaje-box {
+    color: #1A1D36;
+    border: 3px solid #1298D4;
+    text-align: center;
+}
+
+.viaje-box__content {
+    padding: 50px 20px;
+}
+
+.viaje-box:first-child {
+    border-right: 1.5px solid #1298D4;
+}
+
+.viaje-box:nth-child(2) {
+    border-left: 1.5px solid #1298D4;
+}
+
+.viaje-box__title {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.viaje-box__sub,
+.viaje-box strong {
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.viaje-box__tel {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.viaje-box__tel .zap,
+.embarque .zap  {
+    max-width: 30px;
+}
+
+.viaje-box__tel .title {
+    font-size: 22px;
+}
+
+.viaje-box__tel .tel {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 25px;
+}
+
+@media (min-width: 768px) { 
+    .viaje-box__tel .tel {
+        margin-top: 0px;
+    }
+}
+
+.embarque {
+    padding: 30px;
+    background: #F5F7F9;
+    text-align: center;
+}
+
+.embarque__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 65%;
+    margin: 0 auto 30px;
+}
+
+.embarque .icon {
+    text-align: center;
+    height: 90px;
+}
+
+.embarque .icon img {
+    max-width: 75px;
+    height: auto;
+}
+
+.embarque .title {
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 auto 15px auto;
+    width: 80%;
+}
+
+.embarque .content__tel {
+    margin-top: 15px;
+}
+
+.embarque .content__tel a {
+    font-size: 20px;
+}
+
+.embarque .content__tel strong {
+    display: block;
+    font-size: 20px;
+}
+
+.embarque .content__apps img {
+    display: inline-block;
+    max-width: 120px;
+    margin-top: 15px;
+    max-height: 35px;
+}
+
+.embarque .box {
+    margin-top: 25px;
+}
+
+
+@media (min-width: 768px) {
+    .embarque .box {
+        margin-top: 0;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="page-cash-passport">
+
+    <section class="banner" style="background-image: url('confi/banner.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="banner__title">
+                        <?php the_title(); ?>
+                    </h1>
+                    <h2 class="banner__subtitle">
+                        O dinheiro da sua viagem no <b>Cash Passport Mastercard Platinum.</b>
+                    </h2>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </section>
+    <section class="recebeu-cartao">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <img src="confi/card.png" alt="Cartão confidence" class="img-responsive">
+                </div>
+                <div class="col-md-5 col-md-offset-right-1 text-center">
+                    <h3>Recebeu o seu Cash Passport Mastercard Platinum?</h3>
+                    <a href="#ativar">Ativar Cartão</a>
+                    <a href="#saldo">Saldo e Extrato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cash-passport">
+        <div class="container">
+            <div class="row">
+                <div class="cash-passport__header text-center">
+                    <h2 class="cash-passport__title">Cash Passport Mastercard Platinum</h2>
+                    <h4 class="cash-passport__subtitle">O <strong>cartão Confidence,</strong> ideal para suas viagens
+                        internacionais.</h3>
+                </div>
+                <div class="slider-cash-passport">
+                    <div class="box-slider">
+                        <div class="icon">
+                            <img src="confi/bar-chart.png">
+                        </div>
+                        <h3 class="slider-cash-passport__title">Sem Variação Cambial</h3>
+                        <p class="slider-cash-passport__text">A taxa é fechada no momento da compra da moeda.</p>
+                    </div>
+                    <div class="box-slider">
+                        <div class="icon">
+                            <img src="confi/loan.png">
+                        </div>
+                        <h3 class="slider-cash-passport__title">Disponível em até 6 moedas estrangeiras em único cartão</h3>
+                        <p class="slider-cash-passport__text">Dólar Americano, Dólar Canadense, Dólar Australiano, Dólar
+                            Neozelandês, Euro e Libra.</p>
+                    </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                <img src="confi/debit-card.png">
+                            </div>
+                            <h3 class="slider-cash-passport__title">Recarregue e acompanhe seu saldo e extrato</h3>
+                            <p class="slider-cash-passport__text">Com aplicativo Confidence Câmbio você tem em suas mãos todo o controle do saldo, extrato e ainda recarrega seu pré-pago Confidence de onde estiver e sempre que precisar, direto do Aplicativo.</p>
+                        </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                    <img src="confi/debit-card.png">
+                                </div>
+                        <h3 class="slider-cash-passport__title">Tecnologia Contactless</h3>
+                        <p class="slider-cash-passport__text">Realize seus pagamentos utilizando a tecnologia
+                            contactless em
+                            milhões de
+                            estabelecimentos pelo mundo<sup>1</sup>.</p>
+                    </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                    <img src="confi/debit-card.png">
+                                </div>
+                        <h3 class="slider-cash-passport__title">Atraso ou perda de bagagem</h3>
+                        <p class="slider-cash-passport__text">Com o seguro de bagagem Mastercard você viaja com total
+                            tranquilidade.
+                            <a class="saibamais" href="&lt;?php echo get_site_url() ?&gt;/faq/" target="_blank"
+                                rel="noopener">Saiba mais</a></p>
+                    </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                    <img src="confi/debit-card.png">
+                                </div>
+                        <h3 class="slider-cash-passport__title">Mais Segurança Para você</h3>
+                        <p class="slider-cash-passport__text">Realize saques em qualquer parte do mundo na moeda
+                            local.</p>
+                    </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                    <img src="confi/debit-card.png">
+                                </div>
+                        <h3 class="slider-cash-passport__title">Assistência</h3>
+                        <p class="slider-cash-passport__text">Em caso de perda ou roubo do cartão você conta com
+                            assistência 24h
+                            para reposição
+                            de novo cartão ou dinheiro em espécie.</p>
+                    </div>
+                    <div class="box-slider">
+                            <div class="icon">
+                                    <img src="confi/debit-card.png">
+                                </div>
+                        <h3 class="slider-cash-passport__title">Segurança</h3>
+                        <p class="slider-cash-passport__text">Seu cartão não tem vínculo com sua conta bancária e é
+                            protegido por
+                            chip e senha.</p>
+                    </div>
+                </div>
+                <div class="cash-passport-terms text-center">
+                    <ul>
+                        <li>¹ Para comprar até 30 dólares ou valor equivalente em outras moedas. Saiba mais. As condições de cada produto podem ser <a href="#consulte">consultadas aqui</a></li>
+                        <li>² O cartão Cash Passaport é emitido pela Travelex Card Services Limited, de acordo com a licença da Mastercard International Inc.</li>
+                        <li>A Mastercard é uma marca registrada e o design dos círculos é uma marca registrada da Mastercard International Incorporated.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="viaje-conectado text-center">
+
+            
+                <div class="row no-gutters">
+                    <div class="viaje-box col-md-6">
+                            Área Rervada para imagem
+                    </div>
+                    
+             
+                        <div class="viaje-box col-md-6">
+                                <div class="viaje-box__content">
+                                <div class="viaje-box__title">
+                                        Viaje conectado com seu cash passport mastercard platinum
+                                </div>
+                                <div class="viaje-box__sub">
+                                        Ganhe R$ 65,00 de desconto na compra de um Chip Internacional de Celular.
+                                </div>
+                                <strong class="fale">Fale com nossos especialistas:</strong>
+                                <div class="viaje-box__tel">
+                                    <div class="title">WhatsApp <img src="confi/zap.png" class="zap"></div>
+                                    <div class="tel">(11) 94245-4693</div>
+                                </div>
+                                <div class="viaje-box__tel">
+                                    <div class="title">Mesa de operações</div>
+                                    <div class="tel">(11) 4004-5700</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    </section>
+
+    <section class="embarque">
+        <div class="container">
+            <div class="row">
+                <div class="embarque__title">Peça, embarque e use seu Cash Passport Mastercard Platinum.</div>
+                
+               <div class="col-sm-4 box">
+                   <div class="icon">
+                       <img src="confi/credit-card.png" alt="">
+                   </div>
+                   <div class="title">Peça seu Cartão pré-pago de viagem internacional.</div>
+                   <div class="content">Pelo <a href="#meuovo">Aplicativo Confidencie Câmbio</a> e <a href="#loja">Loja Online.</a> Se preferir, fale agora com nossos especialistas:
+                    <div class="content__tel">
+                        Através do nosso <a href="#zap">WhatsApp</a><img class="zap" src="confi/zap.png"> Ou <strong>(11) 4004-5700</strong><strong>0800 400 0800</strong>
+                    </div>
+                </div>
+               </div>
+               <div class="col-sm-4 box">
+                   <div class="icon">
+                       <img src="confi/smartphone.png" alt="">
+                   </div>
+                   <div class="title">Baixe o Aplicativo Confidence Câmbio</div>
+                   <div class="content">Para ativar o seu Cartão e acompanhar saldo, extrato e se precisar, fazer uma recarga.
+                       <div class="content__apps">
+                           <img src="confi/android.png" alt="Baixe na Play Store">
+                           <img src="confi/app-store.png" alt="Baixe na Play Store">
+                       </div>
+                   </div>
+               </div>
+               <div class="col-sm-4 box">
+                   <div class="icon">
+                       <img src="confi/world.png" alt="" srcset="">
+                   </div>
+                   <div class="title">Embarque e utilize seu cartão pelo mundo!</div>
+                   <div class="content">
+                        Utilize seu cartão em milhões de estabelecimentos comerciais pelo mundo.
+                   </div>
+               </div>
+            
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+
+</html>
+
+<script>
+    $('.slider-cash-passport').slick({
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [{
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+
+// Set up our HTTP request
+var xhr = new XMLHttpRequest();
+
+// Setup our listener to process completed requests
+xhr.onload = function () {
+
+	// Process our return data
+	if (xhr.status >= 200 && xhr.status < 300) {
+		// What do when the request is successful
+		var page = JSON.parse(xhr.responseText);
+        document.querySelector('.banner__title').innerHTML = page.title.rendered;
+        document.querySelector('.banner__subtitle').innerHTML = page.wps_subtitle;
+        featImage = page._embedded['wp:featuredmedia'][0].source_url;
+        document.querySelector('.banner').style.backgroundImage = 'url(' + featImage + ')';
+	} else {
+		// What do when the request fails
+		console.log('The request failed!');
+	}
+
+	// Code that should run regardless of the request status
+	console.log('This always runs...');
+};
+
+// Create and send a GET request
+// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+// The second argument is the endpoint URL
+xhr.open('GET', 'https://simulacao.tihum.com/wp-json/wp/v2/pages/11169?_embed');
+xhr.send();
+</script>
